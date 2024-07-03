@@ -22,7 +22,7 @@ export function main() {
   c2.visualizar();
 
   while (true) {
-    console.log(colors.bg.black, colors.fg.white);
+    console.log(colors.bg.magentabright, colors.fg.white);
     console.log("*****************************************************");
     console.log("                                                     ");
     console.log("                      NO BANQUI                      ");
@@ -88,6 +88,7 @@ export function main() {
 
         break;
     }
+    console.log(colors.reset);
   }
 }
 
@@ -99,7 +100,6 @@ export function sobre(): void {
   console.log("Generation Brasil - generation@generation.org");
   console.log("github.com/RogerVCruz");
   console.log("*****************************************************");
-  console.log(colors.reset);
 }
 
 main();
