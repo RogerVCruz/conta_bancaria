@@ -1,8 +1,12 @@
 import readlinesync from "readline-sync";
 import { colors } from "./src/util/Colors";
+import { Conta } from "./src/model/Conta";
 
 export function main() {
   let opcao: number;
+
+  const c1: Conta = new Conta(1, 1234, 1, "Júlia", 800000.0);
+  const c2: Conta = new Conta(2, 1234, 2, "Marcella", 800000.0);
 
   while (true) {
     console.log(colors.bg.black, colors.fg.white);
