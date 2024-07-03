@@ -1,4 +1,4 @@
-import readlinesync = require("readline-sync");
+import readlinesync from "readline-sync";
 import { colors } from "./src/util/Colors";
 
 export function main() {
