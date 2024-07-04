@@ -42,8 +42,11 @@ export function main() {
   cc1.visualizar();
   cc2.visualizar();
 
-  console.log(`\nSaque de R$ 25.000.00 na Conta CC1: ${cc1.sacar(25000)}`);
-  console.log(`\nSaque de R$ 1.500.00 na Conta CC1: ${cc2.sacar(1500)}`);
+  console.log(`\nSaque de R$ 25.000.00 na Conta CC1:}`);
+  cc1.sacar(25000);
+
+  console.log(`\nSaque de R$ 1.500.00 na Conta CC2: `);
+  cc2.sacar(1500);
 
   console.log(`\nDepositar R$ 3.000.99 Reais na Conta CC2: `);
   cc2.depositar(3000.99);
