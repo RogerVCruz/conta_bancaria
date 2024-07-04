@@ -1,25 +1,53 @@
 import readlinesync from "readline-sync";
 import { colors } from "./src/util/Colors";
 import { Conta } from "./src/model/Conta";
+import { ContaCorrente } from "./src/model/ContaCorrente";
 
 export function main() {
   let opcao: number;
 
-  const c1: Conta = new Conta(1, 1234, 1, "Júlia", 800);
-  const c2: Conta = new Conta(2, 1234, 2, "Marcella", 800);
+  // const c1: Conta = new Conta(1, 1234, 1, "Júlia", 800);
+  // const c2: Conta = new Conta(2, 1234, 2, "Marcella", 800);
 
-  // Sacar da conta da Júlia
-  console.log(`Sacando 100 da Júlia ${c1.sacar(100)}`);
-  console.log(`Saldo da Júlia ${c1.saldo}`);
-  console.log("Visão geral da conta da Júlia: ");
-  c1.visualizar();
+  // // Sacar da conta da Júlia
+  // console.log(`Sacando 100 da Júlia ${c1.sacar(100)}`);
+  // console.log(`Saldo da Júlia ${c1.saldo}`);
+  // console.log("Visão geral da conta da Júlia: ");
+  // c1.visualizar();
 
-  // Depoistar 200 na conta da Marcella
-  console.log("Depositando 200 na conta da Marcela");
-  c2.depositar(200);
-  console.log(`Saldo da Marcela depois do depósito ${c2.saldo}`);
-  console.log("Visão geral da conta da Marcela: ");
-  c2.visualizar();
+  // // Depoistar 200 na conta da Marcella
+  // console.log("Depositando 200 na conta da Marcela");
+  // c2.depositar(200);
+  // console.log(`Saldo da Marcela depois do depósito ${c2.saldo}`);
+  // console.log("Visão geral da conta da Marcela: ");
+  // c2.visualizar();
+
+  const cc1: ContaCorrente = new ContaCorrente(
+    3,
+    1234,
+    1,
+    "Amanda Magro",
+    1000000.0,
+    100000
+  );
+  const cc2: ContaCorrente = new ContaCorrente(
+    4,
+    1234,
+    1,
+    "João da Silva",
+    1000.0,
+    100
+  );
+
+  cc1.visualizar();
+  cc2.visualizar();
+
+  console.log(`\nSaque de R$ 25.000.00 na Conta CC1: ${cc1.sacar(25000)}`);
+  console.log(`\nSaque de R$ 1.500.00 na Conta CC1: ${cc2.sacar(1500)}`);
+
+  console.log(`\nDepositar R$ 3.000.99 Reais na Conta CC2: `);
+  cc2.depositar(3000.99);
+  cc2.visualizar();
 
   while (true) {
     console.log(colors.bg.magentabright, colors.fg.white);
