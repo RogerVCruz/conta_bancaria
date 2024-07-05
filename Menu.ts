@@ -6,22 +6,7 @@ import { ContaCorrente } from "./src/model/ContaCorrente";
 export function main() {
   let opcao: number;
 
-  // const c1: Conta = new Conta(1, 1234, 1, "Júlia", 800);
-  // const c2: Conta = new Conta(2, 1234, 2, "Marcella", 800);
-
-  // // Sacar da conta da Júlia
-  // console.log(`Sacando 100 da Júlia ${c1.sacar(100)}`);
-  // console.log(`Saldo da Júlia ${c1.saldo}`);
-  // console.log("Visão geral da conta da Júlia: ");
-  // c1.visualizar();
-
-  // // Depoistar 200 na conta da Marcella
-  // console.log("Depositando 200 na conta da Marcela");
-  // c2.depositar(200);
-  // console.log(`Saldo da Marcela depois do depósito ${c2.saldo}`);
-  // console.log("Visão geral da conta da Marcela: ");
-  // c2.visualizar();
-
+  //Conta Corrente
   const cc1: ContaCorrente = new ContaCorrente(
     3,
     1234,
