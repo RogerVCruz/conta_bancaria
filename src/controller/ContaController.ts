@@ -11,7 +11,7 @@ export class ContaController implements ContaRepository {
   procurarPorNumero(numero: number): void {
     let buscaConta = this.buscarNoArray(numero);
 
-    if (buscaConta !== null) {
+    if (buscaConta) {
       buscaConta.visualizar();
     } else {
       console.log("\nA Conta não foi encontrada!");
@@ -32,7 +32,7 @@ export class ContaController implements ContaRepository {
   atualizar(conta: Conta): void {
     let buscaConta = this.buscarNoArray(conta.numero);
 
-    if (buscaConta !== null) {
+    if (buscaConta) {
       this.listaContas[this.listaContas.indexOf(buscaConta)] = conta;
       console.log("Conta atualizada com sucesso!");
     } else {
@@ -43,7 +43,7 @@ export class ContaController implements ContaRepository {
   deletar(numero: number): void {
     let buscaConta = this.buscarNoArray(numero);
 
-    if (buscaConta !== null) {
+    if (buscaConta) {
       this.listaContas.splice(this.listaContas.indexOf(buscaConta), 1);
       console.log("Conta excluída com sucesso!");
     } else {
@@ -52,15 +52,40 @@ export class ContaController implements ContaRepository {
   }
 
   sacar(numero: number, valor: number): void {
-    throw new Error("Method not implemented.");
+    let buscaConta = this.buscarNoArray(numero);
+
+    if (buscaConta) {
+      if (buscaConta.sacar(valor) === true) {
+        console.log("\nO saque foi efetuado com sucesso!");
+      }
+    } else {
+      console.log("\nA Conta não foi encontrada!");
+    }
   }
 
   depositar(numero: number, valor: number): void {
-    throw new Error("Method not implemented.");
+    let buscaConta = this.buscarNoArray(numero);
+
+    if (buscaConta) {
+      buscaConta.depositar(valor);
+      console.log("\nDepósito foi efetuado com sucesso!");
+    } else {
+      console.log("\nA Conta não foi encontrada!");
+    }
   }
 
   tranferir(numeroOrigem: number, numeroDestino: number, valor: number): void {
-    throw new Error("Method not implemented.");
+    let buscaContaOrigem = this.buscarNoArray(numeroOrigem);
+    let buscaContaDestino = this.buscarNoArray(numeroDestino);
+
+    if (buscaContaOrigem && buscaContaDestino) {
+      if (buscaContaOrigem.sacar(valor)) {
+        buscaContaDestino.depositar(valor);
+        console.log("\nA transferência foi efetuada com sucesso!");
+      }
+    } else {
+      console.log("\nA Conta de origem e/ou destino não foram encontradas!");
+    }
   }
 
   // Outros métodos
