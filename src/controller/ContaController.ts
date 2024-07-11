@@ -13,7 +13,11 @@ export class ContaController implements ContaRepository {
       c.titular.includes(titular)
     );
 
-    buscaPorTitular.forEach((conta) => conta.visualizar());
+    if (buscaPorTitular) {
+      buscaPorTitular.forEach((conta) => conta.visualizar());
+    } else {
+      console.log("Conta não encontrada!");
+    }
   }
 
   procurarPorNumero(numero: number): void {
